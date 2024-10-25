@@ -14,14 +14,14 @@ class ImageGallerySaverPlus {
       {int quality = 80,
       String? name,
       bool isReturnImagePathOfIOS = false}) async {
-    final result =
+    var resultImage =
         await _channel.invokeMethod('saveImageToGallery', <String, dynamic>{
       'imageBytes': imageBytes,
       'quality': quality,
       'name': name,
       'isReturnImagePathOfIOS': isReturnImagePathOfIOS
     });
-    return result;
+    return resultImage;
   }
 
   /// Save the PNG，JPG，JPEG image or video located at [file] to the local device media gallery.
